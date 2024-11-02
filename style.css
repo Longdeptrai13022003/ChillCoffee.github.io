@@ -1528,3 +1528,74 @@ progress::-moz-progress-bar {
         height: 600px; /* Chiều cao cho màn hình lớn hơn */
     }
 }
+
+/* Container chính cho phản hồi */
+#customer-feedback-container.customer-feedback {
+    max-width: 100%; /* Chiều rộng tối đa của container */
+    margin: 0 auto; /* Căn giữa */
+    padding: 20px; /* Khoảng đệm bên trong */
+    background-color: #856262; /* Màu nền */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+/* Mục phản hồi */
+.customer-feedback .feedback-entry {
+    padding: 15px; /* Khoảng đệm bên trong cho mỗi mục phản hồi */
+    margin-bottom: 15px; /* Khoảng cách giữa các mục phản hồi */
+    background-color: #fff; /* Màu nền trắng */
+    border-radius: 5px; /* Bo góc */
+    border: 1px solid #e1e1e1; /* Viền nhẹ */
+    transition: box-shadow 0.3s ease; /* Hiệu ứng chuyển tiếp cho bóng */
+}
+
+/* Hiệu ứng khi hover */
+.customer-feedback .feedback-entry:hover {
+    box-shadow: 0 4px 12px rgba(220, 210, 210, 0.934); /* Đổ bóng khi hover */
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+/* Tiêu đề phản hồi */
+.customer-feedback .feedback-header {
+    display: flex; /* Sử dụng flexbox để sắp xếp */
+    justify-content: space-between; /* Căn giữa và phân phối không gian */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Tên khách hàng */
+.customer-feedback .feedback-name {
+    font-size: 1.5em; /* Kích thước chữ lớn hơn */
+    font-weight: bold; /* In đậm */
+    color: #4e3d3d; /* Màu chữ tối */
+}
+
+/* Đánh giá sao */
+.customer-feedback .feedback-rating {
+    font-size: 1.5em; /* Kích thước chữ lớn */
+    color: #f39c12; /* Màu vàng cho sao */
+}
+
+/* Nội dung phản hồi */
+.customer-feedback .feedback-comment {
+    font-size: 1em; /* Kích thước chữ mặc định */
+    color: #555; /* Màu chữ xám tối */
+    margin-top: 10px; /* Khoảng cách với tiêu đề */
+}
+
+/* Thời gian phản hồi */
+.customer-feedback .feedback-timestamp {
+    font-size: 1.1em; /* Kích thước chữ lớn hơn */
+    color: #999; /* Màu chữ xám nhạt */
+    font-weight: bold; /* Làm đậm chữ thời gian */
+    margin-left: auto; /* Đẩy thời gian về bên phải */
+}
+.feedback-title {
+    font-size: 2em; /* Kích thước chữ lớn */
+    font-weight: bold; /* In đậm */
+    color: #b0907a; /* Màu chữ tối */
+    text-align: center; /* Căn giữa */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+    border-bottom: 2px solid #f39c12; /* Đường viền dưới màu cam */
+    padding-bottom: 10px; /* Khoảng đệm phía dưới */
+}

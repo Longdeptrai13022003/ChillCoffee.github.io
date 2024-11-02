@@ -14,35 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 //-----------------------------------------------------------------------------------------//
-document.addEventListener("DOMContentLoaded", function() {
-    fetchFeedback(); // Gọi hàm fetchFeedback khi tài liệu được tải hoàn toàn
-});
 
-// Hàm lấy dữ liệu phản hồi từ API
-function fetchFeedback() {
-    fetch('https://script.google.com/macros/s/AKfycbzsEFPnrgSS-ecRRnjLHiplgxdIznnpHacA9i93kD4jxAy0OR_5oUl-QWWaxnrwZVbwlw/exec')
-        .then(response => response.json())
-        .then(data => displayFeedback(data))
-        .catch(error => console.error('Error:', error));
-}
 
-// Hàm hiển thị phản hồi
-function displayFeedback(data) {
-    const feedbacksDiv = document.getElementById('feedbacks'); // Phần tử nơi sẽ hiển thị phản hồi
-    feedbacksDiv.innerHTML = ''; // Xóa nội dung cũ
-
-    data.forEach(item => {
-        const feedbackItem = document.createElement('div'); // Tạo một phần tử div mới
-        feedbackItem.innerHTML = `
-            <p><strong>Tên:</strong> ${item.name}</p>
-            <p><strong>Đánh giá:</strong> ${item.rating} sao</p>
-            <p><strong>Ý kiến:</strong> ${item.feedback}</p>
-            <p><strong>Thời gian:</strong> ${item.elapsedTime}</p>
-            <hr>
-        `;
-        feedbacksDiv.appendChild(feedbackItem); // Thêm phần tử phản hồi vào div chứa
-    });
-}
 
 //burger menu
 

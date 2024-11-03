@@ -14,6 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 //-----------------------------------------------------------------------------------------//
+// Mã JavaScript để hiển thị và đóng pop-up
+document.addEventListener("DOMContentLoaded", function() {
+    // Hiển thị pop-up khi tải trang
+    document.getElementById("popup-banner").style.display = "flex";
+    
+    // Đóng pop-up khi nhấn nút X
+    document.getElementById("close-popup").onclick = function() {
+        document.getElementById("popup-banner").style.display = "none";
+    };
+});
 
 
 

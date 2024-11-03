@@ -1,9 +1,9 @@
 const coffeeData = [
   {
-    src: "./assets/menu/coffee-1.png",
-    title: 'Irish coffee',
+    src: "./assets/menu/matcha latte.avif",
+    title: 'Matcha Latte',
     description: 'Fragrant black coffee with Jameson Irish whiskey and whipped milk',
-    cost: "$7.00"
+    cost: "35,000đ"
   },
   {
     src:"./assets/menu/coffee-3.png",

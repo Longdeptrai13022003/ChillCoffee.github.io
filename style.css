@@ -1599,3 +1599,97 @@ progress::-moz-progress-bar {
     border-bottom: 2px solid #f39c12; /* Đường viền dưới màu cam */
     padding-bottom: 10px; /* Khoảng đệm phía dưới */
 }
+/* CSS cho pop-up */
+#popup-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#popup-content {
+    background-image: url(./assets/banner.jpeg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    width: 80%;
+    max-width: 90%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#popup-content h2 {
+    color: #8B4513; /* Tông màu cà phê */
+}
+
+#popup-content p {
+    color: #4E342E; /* Tông màu cà phê tối hơn */
+}
+
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* CSS cho biểu tượng Messenger */
+#messenger-icon {
+    position: fixed;
+    bottom: 20px; /* Vị trí cách đáy 20px */
+    right: 10px; /* Vị trí cách bên phải 20px */
+    z-index: 1001;
+    display: flex; /* Để hiển thị logo và tên cùng một hàng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    cursor: pointer;
+}
+
+#messenger-icon img {
+    width: 70px; /* Kích thước logo */
+    height: 70px; /* Kích thước logo */
+    animation: bounce 1s infinite alternate; /* Hiệu ứng nhảy cho logo */
+    transition: transform 0.5s; /* Thêm hiệu ứng chuyển động cho logo */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.logo-name {
+    margin-left: 10px; /* Khoảng cách giữa logo và tên */
+    opacity: 0; /* Ẩn tên ban đầu */
+    transition: opacity 0.3s, transform 0.5s; /* Hiệu ứng chuyển động cho tên */
+    white-space: nowrap; /* Không xuống dòng */
+}
+
+
+
+#messenger-icon:hover .logo-name {
+    opacity: 1; /* Hiện tên khi hover */
+    transform: translateX(-10px); /* Di chuyển tên sang trái khi hover */
+}
+

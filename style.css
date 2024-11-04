@@ -1646,17 +1646,32 @@ progress::-moz-progress-bar {
 /* CSS cho biểu tượng Messenger */
 #messenger-icon {
     position: fixed;
-    bottom: 20px; /* Vị trí cách đáy 20px */
-    right: 10px; /* Vị trí cách bên phải 20px */
+    bottom: 2vh; /* Cách đáy 2% chiều cao màn hình */
+    right: 2vw; /* Cách phải 2% chiều rộng màn hình */
     z-index: 1001;
-    display: flex; /* Để hiển thị logo và tên cùng một hàng */
-    align-items: center; /* Căn giữa theo chiều dọc */
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #messenger-icon {
+        bottom: 1vh; /* Giảm khoảng cách ở màn hình nhỏ hơn */
+        right: 1vw;
+    }
+}
+
+@media (max-width: 480px) {
+    #messenger-icon {
+        bottom: 0.5vh;
+        right: 0.5vw;
+    }
+}
+
 #messenger-icon img {
-    width: 70px; /* Kích thước logo */
-    height: 70px; /* Kích thước logo */
+    width: 50px; /* Kích thước logo */
+    height: 50px; /* Kích thước logo */
     animation: bounce 1s infinite alternate; /* Hiệu ứng nhảy cho logo */
     transition: transform 0.5s; /* Thêm hiệu ứng chuyển động cho logo */
 }

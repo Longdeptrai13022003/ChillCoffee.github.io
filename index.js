@@ -14,16 +14,58 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
 //-----------------------------------------------------------------------------------------//
-// Mã JavaScript để hiển thị và đóng pop-up
-document.addEventListener("DOMContentLoaded", function() {
+// scripts.js
+
+// Danh sách ảnh banner
+const banners = [
+    "./assets/banner.jpeg",
+    "./assets/banner2.png",
+    "./assets/banner3.png",
+    "./assets/banner4.png"
+];
+
+let currentBannerIndex = 0;
+let bannerInterval;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const popupBanner = document.getElementById("popup-banner");
+    const popupContent = document.getElementById("popup-content");
+
     // Hiển thị pop-up khi tải trang
-    document.getElementById("popup-banner").style.display = "flex";
-    
+    popupBanner.style.display = "flex";
+    // Đặt banner đầu tiên và hiển thị với hiệu ứng fade-in
+    popupContent.style.backgroundImage = `url('${banners[currentBannerIndex]}')`;
+    popupContent.classList.add("fade-in");
+    // Preload tất cả ảnh
+    const preloadedImages = banners.map((src) => {
+        const img = new Image();
+        img.src = src;
+        return img;
+    });
+
+    // Tự động thay đổi banner sau mỗi 5 giây
+    bannerInterval = setInterval(() => {
+        // Gỡ lớp fade-in cũ để bắt đầu hiệu ứng mới
+        popupContent.classList.remove("fade-in");
+
+        // Thay đổi ảnh sau một chút thời gian để đảm bảo hiệu ứng mờ dần xảy ra
+        setTimeout(() => {
+            currentBannerIndex = (currentBannerIndex + 1) % banners.length;
+            // Đảm bảo ảnh đã được tải trước khi thay đổi
+            popupContent.style.backgroundImage = `url('${preloadedImages[currentBannerIndex].src}')`;
+
+            // Thêm lớp fade-in để kích hoạt hiệu ứng
+            popupContent.classList.add("fade-in");
+        }, 700); // Thời gian gỡ lớp đủ để hiệu ứng mờ dần hoạt động
+    }, 5000);
+
     // Đóng pop-up khi nhấn nút X
-    document.getElementById("close-popup").onclick = function() {
-        document.getElementById("popup-banner").style.display = "none";
+    document.getElementById("close-popup").onclick = function () {
+        popupBanner.style.display = "none";
+        clearInterval(bannerInterval); // Dừng việc thay đổi banner
     };
 });
+
 
 
 

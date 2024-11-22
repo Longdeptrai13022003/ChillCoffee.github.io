@@ -1614,7 +1614,7 @@ progress::-moz-progress-bar {
 }
 
 #popup-content {
-    background-image: url(./assets/banner.jpeg);
+    background-image: url(./assets/banner2.png);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -1624,6 +1624,12 @@ progress::-moz-progress-bar {
     height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Ẩn pop-up khi mới thay đổi ảnh */
+    transition: opacity 1s ease-in-out; /* Hiệu ứng mờ dần */
+}
+#popup-content.fade-in {
+    opacity: 1;
 }
 
 
@@ -1640,7 +1646,15 @@ progress::-moz-progress-bar {
     top: 10px;
     right: 10px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 5px 10px;
+    transition: transform 0.3s ease;
+}
+#close-popup:hover {
+    transform: scale(1.2);
 }
 
 /* CSS cho biểu tượng Messenger */
